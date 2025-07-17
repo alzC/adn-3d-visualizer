@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* 🎨 Design tokens via @theme */
+@theme {
+	/* Polices */
+	--font-display: "Orbitron", sans-serif;
+	--font-body: "Inter", sans-serif;
+
+	/* Couleurs */
+	--color-neonBlue: oklch(91.3% 0.139 195.8);
+	--color-softCyan: oklch(91.5% 0.258 129);
+	--color-darkViolet: #0f1021;
+	--color-softRed: #ff4d6d;
+	--color-grayFroid: #9ca3af;
+	--color-white: #ffffff;
+
+	/* Rayons, spacing, ombres */
+	--spacing: 1rem; /* utilitaire spacing-scale basé sur ce multiplicateur */
+	--radius-md: 0.5rem;
+	--shadow-glow: 0 0 8px var(--color-neonBlue);
+}
+
+/* Base styles */
+@layer base {
+	html {
+		font-family: var(--font-body);
+		background-color: var(--color-darkViolet);
+		color: var(--color-white);
+	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: var(--font-display);
+		color: var(--color-neonBlue);
+	}
+}
+
+/* Composants utilitaires */
+.btn-neon {
+	@apply px-4 py-2 rounded-md text-white;
+	background: var(--color-neonBlue);
+	box-shadow: var(--shadow-glow);
+	transition: background 0.3s ease-in-out;
+}
+.btn-neon:hover {
+	background: var(--color-softCyan);
+	box-shadow: 0 0 12px var(--color-softCyan);
+}
+
+.card {
+	background-color: rgba(15, 16, 33, 0.6);
+	backdrop-filter: blur(8px);
+	border: 1px solid var(--color-neonBlue);
+	border-radius: var(--radius-md);
+	padding: calc(var(--spacing) * 1);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: var(--color-darkViolet);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--color-grayFroid);
+	border-radius: 4px;
+}
