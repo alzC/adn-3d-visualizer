@@ -15,7 +15,7 @@
 	--color-white: #ffffff;
 
 	/* Rayons, spacing, ombres */
-	--spacing: 1rem; /* utilitaire spacing-scale basé sur ce multiplicateur */
+	 /* utilitaire spacing-scale basé sur ce multiplicateur */
 	--radius-md: 0.5rem;
 	--shadow-glow: 0 0 8px var(--color-neonBlue);
 }
@@ -66,4 +66,62 @@
 ::-webkit-scrollbar-thumb {
 	background: var(--color-grayFroid);
 	border-radius: 4px;
+}
+
+/* === Styles personnalisés du prototype === */
+.glassmorphism {
+  backdrop-filter: blur(20px);
+  background: rgba(15, 16, 33, 0.7);
+  border: 1px solid rgba(0, 224, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 224, 255, 0.1);
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #6a5acd 0%, #00ffc3 100%);
+  transition: all 0.3s ease;
+}
+.gradient-btn:hover {
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 16, 33, 0.3);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00E0FF, #00FFC3);
+  border-radius: 4px;
+}
+
+.orbitron {
+  font-family: 'Orbitron', monospace;
+}
+.inter {
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+.dna-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
