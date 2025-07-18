@@ -176,7 +176,7 @@ export const LeftPanel: React.FC = () => {
               <div className="space-y-2">
                 <Button>Appliquer les paramètres</Button>
                 <Button variant="outline">Réinitialiser par défaut</Button>
-                <Button variant="outline" onClick={() => setActiveTab("analysis")}>Retour à l'analyse</Button>
+                <Button variant="outline" onClick={() => setActiveTab("analysis")}>Retour à l&apos;analyse</Button>
               </div>
             </Card>
           </>
